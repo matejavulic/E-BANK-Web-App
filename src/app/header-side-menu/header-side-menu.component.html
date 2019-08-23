@@ -39,8 +39,8 @@
    
   <li>
     <mat-menu #appMenu="matMenu">
-      <button mat-menu-item>Settings</button>
-      <button mat-menu-item routerLink="/help">Help</button>
+      <button mat-menu-item *ngIf="!userIsAuthenticated">Settings</button>
+      <button mat-menu-item routerLink="/help" *ngIf="userIsAuthenticated">Help</button>
       <a class="maroon" mat-menu-item href="http://localhost:3000/repository/documents/terms-and-conditions-template.pdf">Terms of use</a>
       <button mat-menu-item routerLink="/help">Corporate documents</button>
       <button mat-menu-item routerLink="/help">Suppliers</button>
