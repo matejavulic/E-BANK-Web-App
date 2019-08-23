@@ -1,0 +1,31 @@
+<!--
+ * License: The MIT License (MIT)
+ * Author:E-bank IT team
+ * Author email: @ebanka-it.com
+ * Date: Thu Aug 22 2019
+ * Description: 
+ * HTML file to show form for creating new utility payment.
+ *
+-->
+<mat-card class="align">
+  <mat-spinner class="color" *ngIf="isLoading"></mat-spinner>
+  <form [formGroup]="form" (submit)="onSavePost()" *ngIf="!isLoading">
+    <mat-form-field>
+      <input matInput type="text" formControlName="title" placeholder="Payment title">
+      <mat-error *ngIf="form.get('title').invalid">{{error.title}}</mat-error>
+    </mat-form-field>
+    <div>
+      <button mat-stroked-button type="button" (click)="filePicker.click()">Choose picture</button>
+      <input type="file" #filePicker (change)="onImagePicked($event)">
+    </div>
+    <div class="image-preview" *ngIf="imagePreview!=='' && imagePreview && form.get('image').valid">
+      <img [src]="imagePreview" [alt]="form.value.title"></div>
+    <mat-form-field>
+      <textarea matInput rows="4" name="content" formControlName="content" placeholder="Payment details:">
+          </textarea>
+      <mat-error *ngIf="form.get('content').invalid">{{error.content}}</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="red" type="submit">Commit</button>
+    <button mat-raised-button color="red" type="submit">Abort</button>
+  </form>
+  </mat-card>

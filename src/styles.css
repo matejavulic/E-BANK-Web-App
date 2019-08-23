@@ -1,0 +1,28 @@
+/*
+* License: The MIT License (MIT)
+* Author:E-bank IT team
+* Author email: @ebanka-it.com
+* Date: Fri Aug 23 2019
+* Description: 
+* Global styles CSS file.
+* */
+
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+ }
+
+ body::-webkit-scrollbar {
+  width: 0 !important;
+ }
+
+.bg {
+  background-image: url("http://localhost:3000/repository/images/bg2.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}

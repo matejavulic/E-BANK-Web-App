@@ -1,0 +1,53 @@
+<!--/*
+* License: The MIT License (MIT)
+* Author:E-bank IT team
+* Author email: @ebanka-it.com
+* Date: Fri Aug 23 2019
+* Description: 
+* HTML which shows login form.
+*
+*/-->
+  <mat-card layout='row'>
+    <img class="logo-login" src="http://localhost:3000/repository/images/logo-login2.png" alt="">
+    <mat-card-title class="logo-name" >E-bank</mat-card-title>
+    <p></p>
+    <mat-card-title>User Sign In</mat-card-title>
+    <mat-card-content>
+  <mat-spinner *ngIf = "isLoading"></mat-spinner>
+  <form (submit)="onLogin(loginForm)" #loginForm="ngForm"  *ngIf="!isLoading">
+    <p>
+    <mat-form-field>
+          <input
+           
+            matInput
+            ngModel
+            #emailInput="ngModel"
+            type="email"
+            name="email"
+            placeholder="E-mail"
+            required email
+            >
+            <mat-error *ngIf="emailInput.invalid">Please enter valid e-mail</mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <input
+            matInput
+            ngModel
+            #passwordInput="ngModel"
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+            >
+          <mat-error *ngIf="passwordInput.invalid">Please enter password.</mat-error>
+        </mat-form-field>
+      </p>
+      <div>
+        <button mat-raised-button color="red" type="submit" *ngIf="!isLoading">Log in</button>
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
+      </div>
+  </form>
+</mat-card-content>
+</mat-card>

@@ -1,0 +1,115 @@
+/*
+ * License: The MIT License (MIT)
+ * Author:E-bank IT team
+ * Author email: @ebanka-it.com
+ * Date: Fri Aug 23 2019
+ * Description: 
+ * CSS file for HTML which shows header 
+ * and left side menu
+ *
+ */
+ul {
+  list-style: none;
+  padding:0;
+  margin:0;
+}
+
+a {
+  text-decoration: none;
+  color:white;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+ul {
+  display: flex;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 10;
+}
+
+mat-toolbar {
+  background-color: rgba(197, 59, 59, 0.863);
+}
+
+.btn-selected {
+  color: rgba(196, 69, 60, 0.932);
+  background-color: rgba(255, 244, 180, 0.911);
+}
+
+.btn-menu {
+  color: white;
+}
+
+.logo {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  width: 200px;
+}
+
+.menu-dots {
+  width: 40px;
+  color: rgba(255, 255, 255, 0.932);
+}
+
+.sticky {
+    --default-height: 64px;
+    top: 0;
+    height: var(--default-height);
+  }
+  .sticky-side-menu {
+    --default-height: 70px;
+    top: 0;
+    height: var(--default-height);
+  }
+
+  /*
+  Side menu
+  */
+  
+  .mat-drawer-container {
+    width: 233px;
+    height: 570px;
+}
+
+.menu-color {
+  color: goldenrod;
+  padding-right: 8px;
+}
+
+.mat-list-item {
+  color:maroon;
+}
+
+.mat-nav-list {
+  color:maroon;
+}
+
+.mat-list-base .mat-list-option .mat-list-item-content {
+  padding: 0px 24px;
+}
+
+.hr-bottom {
+  color:rgba(128, 0, 0, 0.623);
+}
+
+.menu-list-item-selected {
+  color: goldenrod;
+}
+
+.maroon {
+  color: maroon;
+}
+
+.user-header {
+  position: relative;
+  left: 5px;
+  top: 2px;
+  padding: 0px;
+}

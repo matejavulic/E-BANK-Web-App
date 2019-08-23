@@ -1,0 +1,103 @@
+/*
+ * License: The MIT License (MIT)
+ * Author:E-bank IT team
+ * Author email: @ebanka-it.com
+ * Date: Thu Aug 22 2019
+ * Description: 
+ * CSS file for HTML part of help component.
+ *
+ */
+mat-form-field {
+  width: 100%;
+}
+
+button {
+ margin-right: 2mm;
+ margin-top: 1mm;
+}
+
+.mat-raised-button.mat-red {
+  background-color: rgba(197, 59, 59, 0.863);
+  color: #ffffff;
+  margin-top: -12px;
+  margin-bottom: 5px;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+:host {
+  display: flex;
+  position: relative;
+  left: 133px;
+  bottom: 513px;
+  justify-content: center;
+  margin: 15px 4px;
+}
+
+.mat-form-field {
+  width: 100%;
+  min-width: 300px;
+}
+
+mat-card {
+  position: relative;
+  display: block;
+  background-color: #fffffff5;
+  bottom: 64px;
+  left: 76px;
+  margin-right: 51px;
+  margin-left:30px;
+  width: -webkit-fill-available;
+}
+
+mat-card-title,
+mat-card-content {
+  display: flex;
+  justify-content: center;
+}
+
+mat-card-title {
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.logo-login {
+  position: relative;
+  left: 85px;
+}
+
+.logo-name {
+  color: rgba(182, 182, 182, 0.925);
+}
+
+ul {
+  list-style: none; 
+  padding:0;
+  margin:0;
+}
+
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+video {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.box-video {
+  display: -webkit-inline-box;
+  position: relative;
+  flex-direction: column;
+  margin: 16px;
+  width: 39%;
+}

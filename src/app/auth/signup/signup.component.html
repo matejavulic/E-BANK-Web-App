@@ -1,0 +1,51 @@
+<!--/*
+ * License: The MIT License (MIT)
+ * Author:E-bank IT team
+ * Author email: @ebanka-it.com
+ * Date: Fri Aug 23 2019
+ * Description: 
+ * Signup form for new user registration.
+ *
+ */-->
+<mat-card class="signup-box" layout='row'>
+  <img class="logo-signup" src="http://localhost:3000/repository/images/logo-login2.png" alt="">
+  <mat-card-title class="logo-name">E-banka</mat-card-title>
+  <p></p>
+  <mat-card-title>Register new user account</mat-card-title>
+  <mat-card-content>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <form (submit)="onSignup(signupForm)" #signupForm="ngForm" *ngIf="!isLoading">
+      <p>
+        <mat-form-field>
+          <input matInput ngModel #textInput="ngModel" type="text" name="name" placeholder="Name" required
+            minlength="3">
+          <mat-error *ngIf="textInput.invalid">Please enter name</mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <input matInput ngModel #textInput="ngModel" type="text" name="surname" placeholder="Surname" required
+            minlength="3">
+          <mat-error *ngIf="textInput.invalid">Please enter surname</mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <input matInput ngModel #emailInput="ngModel" type="email" name="email" placeholder="E-mail" required email>
+          <mat-error *ngIf="emailInput.invalid">Please enter valid e-mail</mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <input matInput ngModel #passwordInput="ngModel" type="password" name="password" placeholder="Password"
+            required>
+          <mat-error *ngIf="passwordInput.invalid">Please enter password</mat-error>
+        </mat-form-field>
+      </p>
+      <div>
+        <button mat-raised-button color="red" type="submit" *ngIf="!isLoading">Register</button>
+        <mat-checkbox [checked]="true">I agree to the Terms and Conditions</mat-checkbox>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

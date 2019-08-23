@@ -1,0 +1,77 @@
+/*
+ * License: The MIT License (MIT)
+ * Author:E-bank IT team
+ * Author email: @ebanka-it.com
+ * Date: Fri Aug 23 2019
+ * Description: 
+ * CSS file for login form.
+ *
+ */
+ 
+mat-form-field {
+  min-width: 256px;
+}
+
+button {
+ margin-right: 2mm;
+ margin-top: 1mm;
+}
+
+.mat-raised-button.mat-red {
+  background-color: rgba(197, 59, 59, 0.863);
+  color: #ffffff;
+  margin-top: -12px;
+  margin-bottom: 5px;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+:host {
+  display: flex;
+  position: relative;
+  left: 140px;
+  justify-content: center;
+  margin: 120px 0px;
+}
+
+.mat-form-field {
+  display: contents;
+  width: 100%;
+  min-width: 300px;
+}
+
+mat-card{
+  background-color: #ffffffe6;
+  border-radius: 15px;
+  top: -60px;
+  padding: 18px;
+}
+
+mat-card-title,
+mat-card-content {
+  display: flex;
+  justify-content: center;
+}
+
+mat-card-title {
+  font-weight: 400;
+  font-size: 22px;
+}
+
+.logo-login {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo-name {
+  color: rgba(182, 182, 182, 0.925);
+}
+

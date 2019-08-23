@@ -1,0 +1,86 @@
+/*
+ * License: The MIT License (MIT)
+ * Author:E-bank IT team
+ * Author email: @ebanka-it.com
+ * Date: Fri Aug 23 2019
+ * Description: 
+ * CSS file for Signup HTML part of component.
+ */
+ 
+mat-form-field{
+  width: 100%;
+}
+
+button{
+ margin-right: 2mm;
+ margin-top: 1mm;
+}
+
+.mat-raised-button.mat-red {
+  background-color: rgba(197, 59, 59, 0.863);
+  color: #ffffff;
+  margin-top: -12px;
+  margin-bottom: 5px;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+:host {
+  display: flex;
+  position: relative;
+  left: 140px;
+  justify-content: center;
+  margin: 120px 0px;
+}
+
+.mat-form-field {
+  width: 100%;
+  min-width: 300px;
+}
+
+mat-card{
+  background-color: #ffffffe6;
+  top: -60px;
+}
+
+mat-card-title,
+mat-card-content {
+  display: flex;
+  justify-content: center;
+}
+
+mat-card-title {
+  position: relative;
+  font-weight: 400;
+  font-size: 22px;
+  margin-left: -110px;
+  margin-right: 8px;
+  left: 259px;
+}
+
+.logo-signup {
+  margin-right: -109px;
+  height: fit-content;
+  padding-top: 69px;
+}
+
+.logo-name {
+  position: relative;
+  left: 110px;
+  top: 232px;
+  color: rgba(182, 182, 182, 0.925);
+}
+
+.signup-box {
+  display: flex;
+  position: relative;
+  top: -76px;
+  border-radius: 14px;
+}

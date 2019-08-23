@@ -1,0 +1,38 @@
+<!--
+ * License: The MIT License (MIT)
+ * Author:E-bank IT team
+ * Author email: @ebanka-it.com
+ * Date: Thu Aug 22 2019
+ * Description: 
+ * HTML part of component
+ * for showing a list of utility payments
+ * or spining wheel until payments are fetched
+ * from server
+ *
+-->
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<!--hide list of pyments untill all of them are loaded form server-->
+<mat-accordion multi="true" *ngIf="posts.length>0 && !isLoading">
+  <mat-expansion-panel *ngFor="let post of posts">
+    <mat-expansion-panel-header>
+      {{post.title}}
+    </mat-expansion-panel-header>
+    <hr>
+    <div class='post-image'>
+      <img [src]='post.imagePath' [alt]='post.title'></div>
+    <mat-action-row>
+      <a mat-button color="primary" [routerLink]="['/edit', post.id]">Edit</a>
+      <button mat-button color="warn" (click)="onDelete(post.id)">Delete</button>
+    </mat-action-row>
+    {{post.content}}
+  </mat-expansion-panel>
+</mat-accordion>
+<div class="footer">
+  <mat-paginator [length]="totalPosts" [pageSize]="postsPerPage" [pageSizeOptions]="pageSizeOptions"
+    (page)="onChangedPage($event)" *ngIf="posts.length > 0">
+  </mat-paginator>
+</div>
+
+<mat-card layout='row' class="info" *ngIf="posts.length<=0 && !isLoading">
+  <mat-card-content class="mat-body-1 info-text">There are no payments.</mat-card-content>
+</mat-card>

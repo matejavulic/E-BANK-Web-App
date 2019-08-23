@@ -1,0 +1,217 @@
+<!--/*
+ * License: The MIT License (MIT)
+ * Author:E-bank IT team
+ * Author email: @ebanka-it.com
+ * Date: Fri Aug 23 2019
+ * Description: 
+ * HTML file for rendering Transactions and
+ * Exchange rate tables, Available ballance and Transfer 
+ * funds boxes.
+ *
+ */-->
+<mat-card layout='row' class="info">
+  <mat-card-title-group>
+    <mat-card-title class="avatar-title">Hello, {{user.name}}</mat-card-title>
+    <mat-card-subtitle class="avatar-title">
+      <button mat-raised-button class="contact-btn">Contact support</button>
+    </mat-card-subtitle>
+    <img mat-card-avatar mat-card-sm-image class="avatar" src="http://localhost:3000/repository/images/support-f.png"
+      alt="Support avatar">
+  </mat-card-title-group>
+  <mat-card-content class="mat-body-1 info-text flex">You are signed in as: <br> {{user.name}} {{user.surname}}
+    <mat-divider class="divider" vertical="true" vertical style="height:60px"></mat-divider>
+  </mat-card-content>
+  <mat-card-content class="mat-body-1 info-text flex">Your client number: <br> 000000000{{user.clientNumber}}
+    <mat-divider class="divider" vertical="true" vertical style="height:60px"></mat-divider>
+  </mat-card-content>
+  <mat-card-content class="mat-body-1 flex">Your account branch:<br> {{user.branch}}</mat-card-content>
+  <mat-divider class="block-divider"></mat-divider>
+  <br><br><br>
+
+  <mat-card class="transaction-box">
+    <mat-card-header>
+      <div mat-card-avatar class="grid-card-header-image">
+        <mat-icon class="icon">swap_horiz</mat-icon>
+      </div>
+      <mat-card-title>Recent Transactions</mat-card-title>
+      <mat-card-subtitle>account number: {{13690000 + user.clientNumber}}</mat-card-subtitle>
+      <mat-menu #appMenu1="matMenu">
+        <button mat-menu-item>Settings</button>
+        <button mat-menu-item routerLink="/help">Help</button>
+      </mat-menu>
+      <button mat-icon-button class="gear-transactions" [matMenuTriggerFor]="appMenu1">
+        <mat-icon class="menu-dots">settings</mat-icon>
+      </button>
+    </mat-card-header>
+
+    <div *ngIf="hasTransactions" class="mat-elevation-z8 list">
+
+      <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
+
+        <ng-container matColumnDef="description">
+          <th mat-header-cell class="sticky-header" *matHeaderCellDef> Description </th>
+          <td mat-cell *matCellDef="let element"> <span class="elipsis">{{element.description}}</span> </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="amount">
+          <th mat-header-cell class="sticky-header" *matHeaderCellDef> Amount </th>
+          <td mat-cell *matCellDef="let element"> <span class="elipsis">{{element.amount}}</span> </td>
+        </ng-container>
+
+        <ng-container matColumnDef="senderAccountNumber">
+          <th mat-header-cell class="sticky-header" *matHeaderCellDef> Account </th>
+          <td mat-cell *matCellDef="let element"> <span class="elipsis">{{"200-" + element.senderAccountNumber}}</span>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="date">
+          <th mat-header-cell class="sticky-header" *matHeaderCellDef> Date </th>
+          <td mat-cell *matCellDef="let element"> <span class="elipsis">{{element.date}}</span> </td>
+        </ng-container>
+
+        <ng-container matColumnDef="expandedDetail">
+          <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplayEng.length">
+            <div class="transaction-element-detail"
+              [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+              <div class="transaction-element-description">
+                Description: {{element.description}} <br>
+                Payment method: {{element.paymentMethod}} <br>
+                Receiver account: {{"200-"+element.receiverAccountNumber}} <br>
+                Date recorded : {{element.dateKnjizenja}}
+              </div>
+            </div>
+          </td>
+        </ng-container>
+
+        <tr class="header-row" mat-header-row *matHeaderRowDef="columnsToDisplayEng; sticky: true"></tr>
+        <tr mat-row *matRowDef="let element; columns: columnsToDisplayEng;" class="transaction-element-row"
+          [class.transaction-expanded-row]="expandedElement === element"
+          (click)="expandedElement = expandedElement === element ? null : element">
+        </tr>
+        <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="transaction-detail-row"></tr>
+      </table>
+    </div>
+    <div *ngIf="isLoading" class="mat-elevation-z8 list">
+      <mat-spinner class="spinner"></mat-spinner>
+    </div>
+    <div *ngIf="!hasTransactions && !isLoading" class="mat-elevation-z8 list no-overflow">
+      <img mat-card-image class="no-transactions" src="http://localhost:3000/repository/images/no-transactions.jpg"
+        alt="Ништа није пронађено.">
+      <p class="no-transactions-message">You have no transactions.</p>
+    </div>
+  </mat-card>
+
+  <mat-card class="current-balance-box">
+    <mat-card-header>
+      <div mat-card-avatar class="grid-card-header-image">
+        <mat-icon class="icon">monetization_on</mat-icon>
+      </div>
+      <mat-card-title>Available ballance</mat-card-title>
+      <mat-card-subtitle>account number: {{13690000 + user.clientNumber}}</mat-card-subtitle>
+      <mat-menu #appMenu2="matMenu">
+        <button mat-menu-item>Подешавања</button>
+        <button mat-menu-item routerLink="/help">Помоћ</button>
+      </mat-menu>
+      <button mat-icon-button [matMenuTriggerFor]="appMenu2">
+        <mat-icon class="menu-dots">settings</mat-icon>
+      </button>
+    </mat-card-header>
+    <mat-card-content>
+      <p class="current-balance">
+        {{user.balance}}<span class="currency">,00 RSD</span>
+      </p>
+      <p class="limit-bar-text">Used limit: {{user.usedLimit}}/{{user.limitMonthly}} RSD</p>
+      <mat-progress-bar class="limit-bar" mode="determinate" value="{{100*(user.usedLimit / user.limitMonthly)}}">
+      </mat-progress-bar>
+    </mat-card-content>
+    <mat-card-actions class="current-ballance-btn">
+      <button mat-button>Request a loan</button>
+      <button mat-button>Transfer funds</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="exchange-box">
+    <mat-card-header>
+      <div mat-card-avatar class="grid-card-header-image">
+        <mat-icon class="icon">euro_symbol</mat-icon>
+      </div>
+      <mat-card-title>Currency exchange rates</mat-card-title>
+      <mat-card-subtitle>date: dd-mm-yyyy</mat-card-subtitle>
+      <mat-menu #appMenu3="matMenu">
+        <button mat-menu-item>Подешавања</button>
+        <button mat-menu-item routerLink="/help">Помоћ</button>
+      </mat-menu>
+      <button mat-icon-button class="gear-currency-exchange" [matMenuTriggerFor]="appMenu3">
+        <mat-icon class="menu-dots">settings</mat-icon>
+      </button>
+    </mat-card-header>
+
+    <div class="mat-elevation-z8 list-exchange-calc">
+      <table mat-table [dataSource]="dataSource2" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="country">
+          <th mat-header-cell *matHeaderCellDef> Country </th>
+          <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="selling">
+          <th mat-header-cell *matHeaderCellDef> Selling price [RSD]</th>
+          <td mat-cell *matCellDef="let element"> {{element.selling}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="buying">
+          <th mat-header-cell *matHeaderCellDef> Buying price [RSD] </th>
+          <td mat-cell *matCellDef="let element"> {{element.buying}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="average">
+          <th mat-header-cell *matHeaderCellDef> Average price [RSD] </th>
+          <td mat-cell *matCellDef="let element"> {{element.average}} </td>
+        </ng-container>
+
+        <tr mat-header-row class="header-row" *matHeaderRowDef="columnsToDisplayExchange"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnsToDisplayExchange;"></tr>
+      </table>
+    </div>
+  </mat-card>
+
+  <mat-card class="grid-card transfer-box">
+    <mat-card-header>
+
+      <div mat-card-avatar class="grid-card-header-image">
+        <mat-icon class="icon">flight_takeoff</mat-icon>
+      </div>
+      <mat-card-title>Transfer funds</mat-card-title>
+      <mat-card-subtitle>from account: {{13690000 + user.clientNumber}}</mat-card-subtitle>
+      <mat-menu #appMenu4="matMenu">
+        <button mat-menu-item>Подешавања</button>
+        <button mat-menu-item routerLink="/help">Помоћ</button>
+      </mat-menu>
+      <button mat-icon-button class="gear-funds-transfer" [matMenuTriggerFor]="appMenu4">
+        <mat-icon class="menu-dots">settings</mat-icon>
+      </button>
+    </mat-card-header>
+    <br>
+    <mat-card-header>
+      <div mat-card-avatar class="grid-card-header-image">
+        <mat-icon class="icon">flight_land</mat-icon>
+      </div>
+      <mat-card-title>To account</mat-card-title>
+      <mat-card-subtitle>account: {{13690000 + user.clientNumber+11}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p> Amount:
+        <mat-form-field mat-card-subtitle>
+          <input matInput value="120 RSD">
+        </mat-form-field>
+      </p>
+
+    </mat-card-content>
+    <mat-card-actions class="transfer-buttons">
+      <button mat-button>Commit</button>
+      <button mat-button>Abort</button>
+    </mat-card-actions>
+  </mat-card>
+
+</mat-card>

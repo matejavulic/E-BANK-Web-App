@@ -1,0 +1,71 @@
+/*
+ * License: The MIT License (MIT)
+ * Author:E-bank IT team
+ * Author email: @ebanka-it.com
+ * Date: Thu Aug 22 2019
+ * Description: 
+ * CSS file for component
+ * wich shows list of fetched utility
+ * payments.
+ *
+ */
+
+:host{
+  display:block;
+  margin-top: 1rem;
+}
+
+.info-text{
+  text-align:center;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+.post-image {
+  width: 70%;
+}
+
+.post-image img {
+  display: block;
+  margin-left: auto;
+  /*margin-right: auto;*/
+  width: 50%;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+mat-expansion-panel {
+  display: block;
+  position: relative;
+  margin-left: 10px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  left: 233px;
+  bottom: 577px;
+  width: 90%;
+  background-color: #fffffff6;
+  }
+
+.info {
+    display: block;
+    position: relative;
+    margin-left: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    left: 233px;
+    bottom: 577px;
+    width: 90%;
+    background-color: #fffffff6;
+  }
+  
+mat-paginator {
+    position: relative;
+    bottom: 577px;
+    display: block;
+    margin-block-start: 3px;
+    margin-block-end: 9px;
+    margin-left: 244px;
+    width: auto;
+    padding: 0px 78px;
+}

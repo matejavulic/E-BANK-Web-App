@@ -1,0 +1,236 @@
+/*
+ * License: The MIT License (MIT)
+ * Author:E-bank IT team
+ * Author email: @ebanka-it.com
+ * Date: Fri Aug 23 2019
+ * Description: 
+ * CSS file for Dashboard component's HTML file
+ *
+ */
+.info {
+  display: block;
+  position: relative;
+  margin-left: 10px;
+  margin-top: 15px;
+  margin-bottom: 2px;
+  left: 233px;
+  bottom: 577px;
+  width: 90%;
+  height: 879px;
+  background-color: #fffffff5;
+  }
+
+  .avatar {
+    position: sticky;
+    right: 1022px;
+  }
+
+  .avatar-title {
+    position: relative;
+    left: 92px;
+    top: 6px;
+    margin-bottom: 3px;
+    font-size: 18px;
+    font-weight: lighter;
+    color: dimgray;
+  }
+
+  .contact-btn {
+    border-radius:18px;
+    top: 6px;
+    right: 6px;
+  }
+
+  .flex {
+    display: inline-flex;
+    flex-direction: row;
+    position: relative;
+    margin-left: 14px;
+    margin-right: -8px;
+    margin-top: 0px;
+    margin-bottom: -71px;
+    left: 464px;
+    bottom: 61px;
+  } 
+
+  .divider {
+    margin-right: 15px;
+    margin-left: 15px;
+    border-color: #daa5206e;
+    border-width: 2px !important;
+  }
+
+  .block-divider {
+    left: 30px !important;
+    width: 961px !important;
+    border-top-color: #daa5206e;
+  }
+
+  .grid-card {
+    max-width: 461px;
+    max-height: 249px;
+  }
+  
+  .grid-card-header-image {
+    background-size: cover;
+  }
+
+  .icon {
+    font-size: 48px;
+  }
+  
+  .current-balance {
+    font-size: 48px;
+    font-weight: 100;
+    color: goldenrod;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .current-balance-box {
+    bottom: 123px;
+    width: 352px;
+  }
+  
+  .current-ballance-btn {
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+    left: 29px;
+  }
+
+  mat-card {
+    margin: 15px;
+    display: inline-block;
+    left: 3px;
+    bottom: 55px;
+    padding: 15px;
+  }
+  
+  .list {
+    width: 503px;
+    height: 239px;
+    left: 0px;
+    overflow: hidden visible;
+    cursor: pointer;
+  }
+
+  .list-exchange-calc {
+    width: 509px;
+    height: 300px;
+    left: 0px;
+    overflow: hidden visible;
+  }
+
+  .no-overflow {
+    overflow:  hidden hidden;
+    cursor: default;
+  }
+
+  table {
+   width: 100%;
+  } 
+
+  .transaction-box {
+    bottom: 37px;
+    width: 506px;
+  }
+
+  .exchange-box {
+    bottom: 37px;
+    width: 506px;
+  }
+
+  .transfer-box {
+    bottom: 138px;
+    width: 355px
+  }
+
+  .transfer-buttons {
+    bottom: 21px;
+    position: relative;
+  }
+
+  tr.transaction-detail-row {
+    height: 0;
+  }
+  
+  tr.transaction-element-row:not(.transaction-expanded-row):hover {
+    background: rgba(156, 146, 0, 0.158);
+  }
+  
+  tr.transaction-element-row:not(.transaction-expanded-row):active {
+    background: #efefef;
+  }
+  
+  .transaction-element-row td {
+    border-bottom-width: 0;
+  }
+  
+  .transaction-element-detail {
+    overflow: hidden;
+    display: flex;
+  }
+  
+  .transaction-element-description {
+    padding: 16px;
+    padding-top: 0px;
+    padding-bottom: 18px;
+    opacity: 0.8;
+    width: 374px;
+  }
+
+  .elipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    width: 116px;
+  }
+
+  .sticky-header {
+    z-index : 2 !important;
+  }
+
+  .header-row {
+    height: 41px;
+  }
+
+  .no-transactions {
+    width: 225px;
+    margin: 0px 0px 9px 0px;
+    top: 27px;
+    left: 135px;
+    position: relative;
+    overflow-y: hidden;
+  }
+
+  .no-transactions-message {
+    text-align: center;
+  }
+
+  .currency {
+    font-size: 23px;
+  }
+
+  .spinner {
+    left: 144px;
+    top: 63px
+  }
+
+  .mat-progress-spinner circle, .mat-spinner circle {
+    stroke-width: 3%;
+    stroke: goldenrod !important;
+    }
+
+  .gear-transactions {
+    left: 178px
+  }
+
+  .gear-currency-exchange {
+    left: 274px
+  }
+
+  .gear-funds-transfer {
+    left: 74px;
+  }

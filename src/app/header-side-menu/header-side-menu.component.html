@@ -1,0 +1,97 @@
+<!--/*
+ * License: The MIT License (MIT)
+ * Author:E-bank IT team
+ * Author email: @ebanka-it.com
+ * Date: Fri Aug 23 2019
+ * Description: 
+ * HTML file which shows header and lefti side menu.
+ */-->
+
+<!--Header-->
+<mat-toolbar class="sticky">
+  <span>
+    <img class="logo" src="http://localhost:3000/repository/images/logo2.png" alt="Почетна страна" routerLink="/">
+  </span>
+  <span class="spacer"></span>
+  <ul>
+    <li>
+  
+      <a mat-button routerLink="/login" *ngIf="!userIsAuthenticated" routerLinkActive="btn-selected">Log in</a>
+    </li>
+    <li>
+      <a mat-button routerLink="/signup" *ngIf="!userIsAuthenticated" routerLinkActive="btn-selected">Sign up</a>
+
+    </li>
+    <li>
+        <button mat-button class="btn-menu user-header" *ngIf="userIsAuthenticated">{{user.name + " " + user.surname}}</button>
+  
+      </li>
+    <li>
+        <button mat-icon-button *ngIf="userIsAuthenticated">
+            <mat-icon class="menu-dots">person</mat-icon>
+          </button>
+    </li>
+    <li>
+        <button mat-icon-button *ngIf="userIsAuthenticated">
+            <mat-icon class="menu-dots">mail</mat-icon>
+          </button>
+    </li>
+   
+  <li>
+    <mat-menu #appMenu="matMenu">
+      <button mat-menu-item>Settings</button>
+      <button mat-menu-item routerLink="/help">Help</button>
+      <a class="maroon" mat-menu-item href="http://localhost:3000/repository/documents/terms-and-conditions-template.pdf">Terms of use</a>
+      <button mat-menu-item routerLink="/help">Corporate documents</button>
+      <button mat-menu-item routerLink="/help">Suppliers</button>
+      <button mat-menu-item routerLink="/help">Disclaimer</button>
+      <button mat-menu-item routerLink="/help">Contact</button>
+    </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="appMenu">
+      <mat-icon class="menu-dots">more_vert</mat-icon>
+    </button>
+  </li>
+  <li>
+      <button mat-icon-button (click)="onLogout()" *ngIf="userIsAuthenticated">
+          <mat-icon class="menu-dots">logout</mat-icon>
+        </button>
+  </li>
+</ul>
+</mat-toolbar>
+
+<!--Left side menu-->
+<mat-sidenav-container class="sticky-side-menu" *ngIf="userIsAuthenticated">
+  <mat-sidenav-content class="mat-drawer-container">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/" routerLinkActive="menu-list-item-selected">
+        <mat-icon class="menu-color">dashboard</mat-icon> Dashboard
+      </a>
+      <hr color="maroon">
+      <a mat-list-item>
+        <mat-icon class="menu-color">account_balance_wallet</mat-icon>Accounts
+      </a>
+      <a mat-list-item>
+        <mat-icon class="menu-color">credit_card</mat-icon>Cards
+      </a>
+
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item routerLink="/create" routerLinkActive="menu-list-item-selected">New payment</button>
+        <button mat-menu-item routerLink="/list" routerLinkActive="menu-list-item-selected">My paymetns</button>
+      </mat-menu>
+      <a mat-list-item class="menu-color" [matMenuTriggerFor]="appMenu">
+        <mat-icon class="menu-color">swap_horiz</mat-icon> Transfers
+      </a>
+
+      <a mat-list-item>
+        <mat-icon class="menu-color">card_giftcard</mat-icon> Loans
+      </a>
+      <a mat-list-item>
+        <mat-icon class="menu-color">info</mat-icon>About bank
+      </a>
+      <a mat-list-item>
+        <mat-icon class="menu-color">equalizer</mat-icon>Utilities
+      </a>
+      <hr class="hr-bottom">
+    </mat-nav-list>
+  </mat-sidenav-content>
+</mat-sidenav-container>
