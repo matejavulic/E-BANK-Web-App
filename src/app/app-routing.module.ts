@@ -42,8 +42,8 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: '', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'test', component: TestComponent },
-  { path: 'help', component: HelpComponent },
-   { path: '**', redirectTo: '/' }
+  { path: 'help', component: HelpComponent, canActivate: [AuthGuard] },
+  { path: '**', redirectTo: '/' }
 
 ];
 
