@@ -26,3 +26,9 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
+
+::selection {
+  background: rgba(255, 255, 0, 0.589);
+  color: black;
+  text-shadow: none;
+}
