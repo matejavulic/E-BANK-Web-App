@@ -83,7 +83,7 @@ Stores user related information. The data tier consists of a two database server
 ## Presentation tier
 ### Front-end
 - **Design principles**  
-  User interface design was conducted according to the usability guidelines given in [10 Usability Heuristics for User Interface Design](https://www.nngroup.com/articles/ten-usability-heuristics/) by Jacob Nielsen. It recommends following heuristics for UI design:
+  User interface design was conducted according to the usability guidelines given in [10 Usability Heuristics for User Interface Design](https://www.nngroup.com/articles/ten-usability-heuristics/) by Jakob Nielsen. It recommends following heuristics for UI design:
   - 1: Visibility of system status  
     *The system should always keep users informed about what is going on, through appropriate feedback within reasonable time.*  
     
