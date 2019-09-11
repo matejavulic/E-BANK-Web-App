@@ -26,6 +26,6 @@
       <mat-error *ngIf="form.get('content').invalid">{{error.content}}</mat-error>
     </mat-form-field>
     <button mat-raised-button color="red" type="submit">Commit</button>
-    <button mat-raised-button color="red" type="submit">Abort</button>
+    <button mat-raised-button color="red" (click)="form.reset()">Abort</button>
   </form>
   </mat-card>
