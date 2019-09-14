@@ -161,7 +161,7 @@ Stores user related information. The data tier consists of a two database server
   
 ## Application tier
 ### Node.js server
-This is the main application server. It communicates with database and Django servers through API server calls.
+This is the main application server. It communicates with database and Django server through an API server calls.
 
 Server is capable of executing following tasks:
  - User Sign Up/Sign In
