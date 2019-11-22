@@ -24,11 +24,11 @@ This is a web application for online banking with all essential features. It all
 
 - Transaction details  
 
-  ![dash2](https://raw.githubusercontent.com/matejavulic/Ebank-Web-App/master/pictures/dash2.PNG)  
+  ![dash2](https://raw.githubusercontent.com/matejavulic/Ebank-Web-App/master/pictures/dash2.png)  
   
 - No transactions  
 
-  ![dash3](https://raw.githubusercontent.com/matejavulic/Ebank-Web-App/master/pictures/dash4.PNG)  
+  ![dash3](https://raw.githubusercontent.com/matejavulic/Ebank-Web-App/master/pictures/dash4.png)  
   
 - Exchange Rates list (dashboard scrolled down)  
 
