@@ -5,7 +5,7 @@
  * Date: Fri Aug 23 2019
  * Description: 
  * HTML file for rendering Transactions and
- * Exchange rate tables, Available ballance and Transfer 
+ * Exchange rate tables, Available balance and Transfer 
  * funds boxes.
  *
  */-->
@@ -107,7 +107,7 @@
       <div mat-card-avatar class="grid-card-header-image">
         <mat-icon class="icon">monetization_on</mat-icon>
       </div>
-      <mat-card-title>Available ballance</mat-card-title>
+      <mat-card-title>Available balance</mat-card-title>
       <mat-card-subtitle>account number: {{13690000 + user.clientNumber}}</mat-card-subtitle>
       <mat-menu #appMenu2="matMenu">
         <button mat-menu-item>Подешавања</button>
@@ -125,7 +125,7 @@
       <mat-progress-bar class="limit-bar" mode="determinate" value="{{100*(user.usedLimit / user.limitMonthly)}}">
       </mat-progress-bar>
     </mat-card-content>
-    <mat-card-actions class="current-ballance-btn">
+    <mat-card-actions class="current-balance-btn">
       <button mat-button>Request a loan</button>
       <button mat-button>Transfer funds</button>
     </mat-card-actions>
