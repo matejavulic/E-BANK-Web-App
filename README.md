@@ -20,7 +20,7 @@ This is a web application for online banking with all essential features. It all
   
 - Dashboard page  
 
-  ![dash1](https://raw.githubusercontent.com/matejavulic/Ebank-Web-App/master/pictures/dash1.PNG)  
+  ![dash1](https://github.com/matejavulic/Ebank-Web-App/blob/master/pictures/dash1.png)  
 
 - Transaction details  
 
